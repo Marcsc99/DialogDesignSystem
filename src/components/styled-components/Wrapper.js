@@ -11,6 +11,7 @@ export const Wrapper = styled.div.attrs(props => (
         padding: props.padding || "0",
         border: props.border || "none"
     }))`
+    box-sizing: border-box;
     width: ${props => props.w};
     height: ${props => props.h};
     display:flex;
@@ -41,6 +42,10 @@ export const Wrapper = styled.div.attrs(props => (
         if(props.c) return css`flex-direction:column`
         if(props.cr) return css`flex-direction:column-reverse`
         if(props.rr) return css`flex-direction:row-reverse`
+    }};
+
+    ${props => { 
+        if(props.pointer) return css`cursor: pointer`
     }};
 
     background-color: ${props => props.bg};
